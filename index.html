@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Esercizi in classe</title>
+</head>
+<body>
+    <script src=utils.js>  </script>
+    <script>
+
+        let n = inserisciIntero1("Inserisci intero maggiore di 0", 0, +Infinity)
+        let minimo = inserisciIntero1("Inserisci minimo", -Infinity, +Infinity)
+        let massimo = inserisciIntero1("Inserisci massimo", -Infinity, +Infinity)
+
+        while (true) {
+            if (minimo > massimo) {
+                let minimo = inserisciIntero1("Inserisci intero", -Infinity, +Infinity)
+                let massimo = inserisciIntero1("Inserisci intero", -Infinity, +Infinity)
+            }
+            else {
+                break
+            }
+        }
+        
+        let v = []
+        for (let i = 0; i < n; i++) {
+            let x = Number(inserisciIntero1("Inserisci intero", minimo, massimo))
+            v.push(x)
+        }
+
+        let contatore = 0
+        for (let i = 0; i < n; i++) {
+            if (v[i] % 2 === 0) {
+                contatore = contatore + 1
+            }
+        }
+        alert("I numeri pari sono " + contatore)
+
+        let somma1 = 0
+        let contatore1 = 0
+        let media
+        for (let i = 0; i < n; i++) {
+            if (i > (minimo + massimo)/2) {
+                somma1 = somma1 + v[i]
+                contatore1 = contatore1 + 1
+            }
+        }
+        media = somma1/contatore1
+        alert(media)
+
+    </script>
+</body>
+</html>
