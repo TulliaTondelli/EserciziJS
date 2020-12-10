@@ -8,13 +8,8 @@ const inserisciPari = (str) => {
     return a
 }
 
-function es2(str) {
+function divisori(k) {
     let contatore = 0
-    let k
-    do {
-
-        k = prompt(str)
-    } while (k < 0 || k > 1000)
 
     for (let i = 0; i <= k; i++) {
         if (k % i === 0) {
@@ -27,8 +22,8 @@ function es2(str) {
     return contatore
 }
 
-function isPrimo(str) {
-    let x = es2(str)
+function isPrimo(k) {
+    let x = es2(k)
     if (x === 2) {
         alert(" Il numero e' primo.")
     }
@@ -75,4 +70,8 @@ function indovinaNumero(str) {
         }
     }   
 }
-indovinaNumero("Dammi un valore X")
+// indovinaNumero("Dammi un valore X")
+
+function es1(params) {
+    
+}
