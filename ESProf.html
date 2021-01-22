@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            "use strict"
+
+            /* Funzione che dato un vettore e un nome li stampa */
+            const stampaVettore = (nome, vettore) => {
+                console.log(`STAMPA ${nome}:`)
+                vettore.forEach((elemento, indice) => {
+                    console.log(`\tElemento ${indice}: ${elemento}`)
+                })
+
+                console.log("--------------------------------------------")
+            }
+
+            const voti = [ 4, 10, 7, 9, 6 ]
+
+            /* Dato un vettore di voti aumenta di 1, fino al massimo di 10 */
+            const votiNuovi = voti.map((elemento) => {    
+                elemento = elemento + 1   
+                if (elemento > 10)
+                    return 10
+                else 
+                    return elemento
+
+                // altrimenti "return Math.min(elemento + 1, 10)"
+            })
+
+            /* Dato un vettore ne restituisce uno simile, dove i voti pari diventano 0 */
+            const votiBuggati = voti.map((elemento, indice) => {
+                if (indice % 2 === 0)
+                    return elemento
+                else 
+                    return 0
+
+                // altrimenti "return indice % 2 === 0 ? elemento: 0"
+            })
+
+            /* Vettore filtrato con i soli valori positivi */
+            const votiPositivi = voti.filter((elemento) => {
+                if (elemento >= 6)
+                    return true
+                else 
+                    return false
+
+                // altrimenti "return elemento >= 6"
+            })
+
+            /* Somma dei voti */
+            const somma = voti.reduce((accumulatore, elemento) => {
+                return accumulatore + elemento
+            }, 0)
+
+            stampaVettore("VOTI", voti)
+            stampaVettore("VOTI NUOVI", votiNuovi)
+            stampaVettore("VOTI BUGGATI", votiBuggati)
+            stampaVettore("VOTI POSITIVI", votiPositivi)
+            console.log(`SOMMA VOTI: ${somma}`)
+            
+        </script>
+    </head>
+    <body>
+        <h2> Documento di prova </h2>
+    </body>
+</html>

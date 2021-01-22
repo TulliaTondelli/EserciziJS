@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            "use strict"
+            
+            function media(stipendi){
+                return (stipendi.reduce((somma, valore) => somma + valore))/stipendi.length
+            }
+
+            const stipendi = [500, 1000, 2370, 1140, 1500, 1750, 5000, 1220, 1600];
+
+            const stipendiAumentati = stipendi.map(e => {
+                return e + ((e*10)/100)
+            })
+
+            stipendi.forEach(e => {
+                if (e > 1000)
+                    console.log(e)
+            })
+
+            const stipendiFiltrati = stipendi.filter(e => {
+                if (e > media(stipendi))
+                return true
+            })
+
+            const somma = stipendi.reduce((somma, e) => {
+                if (e % 100 === 0)
+                    return somma + e
+            })
+        </script>
+    </head>
+    <body>
+        <h2> Documento di prova </h2>
+    </body>
+</html>
